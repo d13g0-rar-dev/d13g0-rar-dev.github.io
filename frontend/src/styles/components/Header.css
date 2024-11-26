@@ -1,0 +1,267 @@
+/* ========================
+   Estilos básicos del header
+======================== */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: white; /* Color de fondo del encabezado */
+  position: sticky; /* Fijar el encabezado */
+  top: 0; /* Colocar el encabezado en la parte superior */
+  left: 0; /* Alinear a la izquierda */
+  right: 0; /* Alinear a la derecha */
+  z-index: 1000; /* Asegúrate de que el encabezado esté por encima de otros elementos */
+}
+
+/* ========================
+   Estilo para el contenido principal
+======================== */
+.main-content {
+  margin-top: 60px; /* Ajusta este valor según la altura de tu encabezado */
+}
+
+/* ========================
+   Estilos del logo
+======================== */
+.header .logo h1 {
+  font-size: 1.5rem;
+  color: #333;
+}
+
+/* ========================
+   Botón del menú hamburguesa (oculto en pantallas grandes)
+======================== */
+.menu-btn {
+  display: none; /* Oculto en pantallas grandes */
+  background-color: transparent; /* Sin fondo */
+  border: 1px solid #ccc; /* Borde gris claro */
+  border-radius: 5px; /* Bordes redondeados */
+  padding: 10px; /* Espaciado interno */
+  cursor: pointer; /* Cambia el cursor al pasar el mouse */
+  position: fixed; /* Posición fija para mover a la esquina */
+  right: 10px; /* Mueve el botón a la derecha */
+  bottom: 10px; /* Mueve el botón a la esquina inferior */
+}
+
+/* Estilos para el ícono del menú */
+.menu-btn:hover {
+  background-color: #ffeb3b; /* Color de fondo al pasar el mouse */
+  border-color: #000; /* Cambiar el color del borde al pasar el mouse */
+}
+
+/* Mostrar el botón en pantallas pequeñas */
+@media (max-width: 768px) { /* Cambia 768px según tu diseño */
+  .menu-btn {
+    display: block; /* Muestra el botón en pantallas pequeñas */
+  }
+}
+
+/* Ocultar el botón en pantallas grandes */
+@media (min-width: 769px) {
+  .menu-btn {
+    display: none; /* Oculto en pantallas grandes */
+  }
+}
+
+
+/* ========================
+   Estilos del menú de navegación
+======================== */
+.nav-links {
+  display: none; /* Ocultar el menú por defecto */
+}
+
+.nav-links.open {
+  display: block; /* Mostrar el menú cuando tiene la clase 'open' */
+}
+
+/* Estilos del menú de navegación para pantallas grandes */
+@media (min-width: 769px) {
+  .nav-links {
+    display: flex; /* Mostrar el menú como flex en pantallas grandes */
+  }
+
+  .nav-links ul {
+    flex-direction: row; /* Alinear los elementos en una fila */
+  }
+
+  .nav-links ul li {
+    margin: 0 15px; /* Espacio entre los elementos del menú */
+  }
+}
+
+/* Estilo de cada elemento del menú */
+.nav-links ul {
+  display: flex;
+  list-style: none;
+  padding: 0;
+}
+
+.nav-links ul li {
+  margin: 0 15px;
+}
+
+.nav-links ul li a {
+  text-decoration: none;
+  color: #000000;
+  font-weight: bold;
+  padding: 15px;
+}
+
+/* ========================
+   Estilos de los íconos del carrito y botones
+======================== */
+.icons {
+  display: flex;
+  align-items: center;
+}
+
+/* Estilos de los botones */
+.contact-btn, .buscar-btn, .carrito-btn, .reporte-btn {
+  display: flex; /* Usar flexbox */
+  justify-content: center; /* Centrar horizontalmente */
+  align-items: center; /* Centrar verticalmente */
+  background-color: #bbbab61b; /* Color de fondo del botón */
+  border: none; /* Sin borde */
+  border-radius: 20px; /* Bordes redondeados */
+  padding: 10px 15px; /* Espaciado interno */
+  margin-left: 10px; /* Espaciado entre botones */
+  font-weight: bold; /* Negrita */
+  cursor: pointer; /* Cambiar el cursor al pasar el mouse */
+  position: relative;
+  z-index: 1;
+}
+
+/* Opcional: estilo para el ícono */
+.icon {
+  margin-right: 5px; /* Espacio entre el ícono y el texto */
+}
+
+/* ========================
+   Rectángulo amarillo del logo
+======================== */
+.yellow-rectangle {
+  background-color: yellow;
+  padding: 5px 10px;
+  font-size: 1.5rem;
+}
+
+/* src/styles/Search.css */
+.search-box {
+  position: relative;
+  margin-top: 10px;
+}
+
+.search-results {
+  position: absolute;
+  top: 40px;
+  width: 100%;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  max-height: 150px;
+  overflow-y: auto;
+}
+
+.search-result-item {
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+.search-result-item:hover {
+  background-color: #f0f0f0;
+  cursor: pointer;
+}
+
+
+/* ========================
+   Ajustes para pantallas grandes
+======================== */
+@media (min-width: 769px) {
+  .contact-btn, .buscar-btn, .carrito-btn, .reporte-btn {
+    margin-top: 0; /* Valor estático para pantallas grandes */
+  }
+}
+
+/* ========================
+   Ajustes para pantallas pequeñas
+======================== */
+@media (max-width: 768px) {
+  .contact-btn, .buscar-btn, .carrito-btn, .reporte-btn {
+    margin-top: -50px; /* Valor ajustado para pantallas pequeñas */
+  }
+
+
+  
+  /* Hacer que el encabezado sea más compacto en pantallas pequeñas */
+  .header {
+    flex-direction: column; /* Cambia a columna para pantallas pequeñas */
+    align-items: normal; /* Alinea a la izquierda */
+  }
+
+  /* Mostrar el botón de menú hamburguesa */
+  .menu-btn {
+    display: contents;
+    align-items: normal;
+    font-size: 20px;
+  }
+
+  /* Mostrar el menú cuando está abierto */
+  .nav-links {
+    width: 25%;
+    background-color: #f4f3f3; /* Color de fondo del menú */
+    padding: 10px; /* Espaciado alrededor del menú */
+    border-radius: 10px; /* Bordes redondeados opcionales */
+    position: fixed; /* Cambia a posición absoluta */
+    top: 100px; /* Ajusta este valor para que esté justo debajo del encabezado */
+    left: 10; /* Alinear a la izquierda */
+  }
+
+  .nav-links.open {
+    display: inline-block; /* Mostrar cuando el menú está abierto */
+  }
+
+  /* Convertir el menú en vertical */
+  .nav-links ul {
+    flex-direction: column-reverse;
+    width: 100%;
+  }
+
+  .nav-links ul li {
+    margin: 10px 0;
+    text-align: left;
+    width: 100%;
+    border: 1px solid #ccc7c7; /* Borde gris claro */
+    border-radius: 10px; /* Bordes redondeados */
+  }
+
+  /* Asegurar que los enlaces llenen el ancho del contenedor */
+  .nav-links ul li a {
+    display: block;
+    width: 50%;
+    padding: 15px;
+  }
+
+  /* Ajustar el tamaño del logo y los botones en pantallas pequeñas */
+  .icons {
+    width: 100%;
+    display: flexbox; /* Usar flexbox para la alineación */
+    justify-content: flex-end; /* Alinear a la derecha */
+  }
+
+  /* Ocultar texto de los botones de contacto y búsqueda en pantallas pequeñas */
+  .contact-btn, .buscar-btn, .carrito-btn, .reporte-btn {
+    width: 50px; /* Ancho fijo para iconos */
+    height: 50px; /* Alto fijo para iconos */
+    padding: 0; /* Sin espaciado interno */
+    margin-left: 10px; /* Espacio entre iconos */
+    display: flex; /* Flex para centrar iconos */
+  }
+
+  /* Ocultar texto de los botones de contacto y búsqueda en pantallas pequeñas */
+  .contact-btn span, .buscar-btn span, .carrito-btn span, .reporte-btn span {
+    display: none; /* Ocultar texto */
+  }
+}
+

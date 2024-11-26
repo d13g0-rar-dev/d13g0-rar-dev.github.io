@@ -1,0 +1,74 @@
+.checkout-container {
+    padding: 20px;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .cart-summary {
+    border-top: 1px solid #ccc;
+    padding-top: 10px;
+  }
+  
+  .cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    padding: 10px 0;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  .item-info {
+    display: flex;
+    align-items: center;
+  }
+  
+  .item-image {
+    width: 60px;
+    height: auto;
+    margin-right: 10px;
+  }
+  
+  .item-name {
+    font-weight: bold;
+  }
+  
+  .item-price, .item-quantity, .item-total {
+    color: #555;
+  }
+  
+  .checkout-summary {
+    margin-top: 20px;
+    font-weight: bold;
+  }
+  
+  .checkout-button {
+    width: 100%;
+    padding: 10px;
+    background-color: #f8b400;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+  }
+  
+  .checkout-button:hover {
+    background-color: #f5a623;
+  }
+
+  .download-button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+  
+  .download-button:hover {
+    background-color: #3c8d3f;
+  }
+  
+  
