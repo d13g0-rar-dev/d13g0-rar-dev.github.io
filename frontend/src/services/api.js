@@ -1,4 +1,4 @@
-const API_URL = 'https://localhost:8080/api';
+const API_URL = 'https://candyshop-backend-latest.onrender.com/api';
 
 // Obtener todos los productos
 export const getProducts = async (filter = 'all') => {
