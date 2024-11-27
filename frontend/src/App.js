@@ -8,17 +8,16 @@ import ShippingForm from "./pages/ShippingForm";
 import ReportPage from "./pages/ReportPage";
 import AdminLogin from "./pages/AdminLogin";
 import BuyPage from "./pages/BuyPage";
-import { HashRouter } from "react-router-dom";
 
 function App() {
   const location = useLocation();
-
   const hideHeaderRoutes = ["/report", "/login"];
+
   return (
     <div className="App">
       {!hideHeaderRoutes.includes(location.pathname) && <Header />}
-
-      <HashRouter>
+      
+      <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/cart" element={<CartPage />} />
         <Route path="/checkout" element={<PayPage />} />
@@ -26,7 +25,7 @@ function App() {
         <Route path="/report" element={<ReportPage />} />
         <Route path="/login" element={<AdminLogin />} />
         <Route path="/buy" element={<BuyPage />} />
-      </HashRouter>
+      </Routes>
     </div>
   );
 }
