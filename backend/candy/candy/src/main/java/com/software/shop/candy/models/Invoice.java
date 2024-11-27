@@ -1,9 +1,7 @@
 package com.software.shop.candy.models;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
-
-import java.sql.Timestamp;
+import java.util.Date;
 
 @Entity
 @Table(name = "invoice")
@@ -14,12 +12,11 @@ public class Invoice {
     private Integer id;
 
     @ManyToOne
-    @JsonIgnore
     @JoinColumn(name = "idCustomer", nullable = false)
     private Customer customer;
 
     private Double total;
-    private Timestamp date;
+    private Date date;
 
     public Integer getId() {
         return id;
@@ -45,11 +42,21 @@ public class Invoice {
         this.total = total;
     }
 
-    public Timestamp getDate() {
+    public Date getDate() {
         return date;
     }
 
-    public void setDate(Timestamp date) {
+    public void setDate(Date date) {
+        this.date = date;
+    }
+
+    public Invoice() {
+    }
+
+    public Invoice(Customer customer, Double total, Date date, Integer id) {
+        this.id = id;
+        this.customer = customer;
+        this.total = total;
         this.date = date;
     }
 }

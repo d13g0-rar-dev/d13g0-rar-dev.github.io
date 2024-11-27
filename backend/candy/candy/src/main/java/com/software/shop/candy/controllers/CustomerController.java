@@ -15,12 +15,22 @@ public class CustomerController {
     private CustomerService customerService;
 
     @PostMapping("/register")
-    public ResponseEntity<String> registerCustomer(@RequestBody Customer customer) {
+    public ResponseEntity<?> registerCustomer(@RequestBody Customer customer) {
         try {
-            customerService.registerCustomer(customer);
-            return new ResponseEntity<>("Customer registered successfully", HttpStatus.CREATED);
+            Customer savedCustomer = customerService.registerCustomer(customer);
+            return new ResponseEntity<>(savedCustomer, HttpStatus.CREATED);
         } catch (Exception e) {
             return new ResponseEntity<>("Error registering customer", HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<Customer> getCustomerById(@PathVariable Integer id) {
+        try {
+            Customer customer = customerService.getCustomerById(id);
+            return ResponseEntity.ok(customer);
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
         }
     }
 

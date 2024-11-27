@@ -5,6 +5,9 @@ import com.software.shop.candy.models.Invoice;
 import com.software.shop.candy.models.Product;
 import com.software.shop.candy.repositories.CartRepository;
 import com.software.shop.candy.repositories.InvoiceRepository;
+
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -30,6 +33,14 @@ public class InvoiceService {
 
         return total;
 
+    }
+
+    public List<Invoice> getAllInvoices() {
+        return invoiceRepository.findAll();
+    }
+
+    public Invoice createInvoice(Invoice invoice) { 
+        return invoiceRepository.save(invoice);
     }
 
 

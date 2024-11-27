@@ -21,8 +21,7 @@ public class Cart {
     @ManyToMany
     @JoinTable(
             name = "product_cart",
-            joinColumns = @JoinColumn(name = "idProduct"),
-            inverseJoinColumns = @JoinColumn(name = "idCart")
+            joinColumns = @JoinColumn(name = "idProduct")
     )
     private Set<Product> products;
 
